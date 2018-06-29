@@ -2,13 +2,149 @@
 <featureModel>
     <properties/>
     <struct>
-        <and abstract="true" mandatory="true" name="TesteMenor">
-            <feature name="Alinhamento"/>
-            <feature name="Bold"/>
-        </and>
+        <or abstract="true" mandatory="true" name="WebHelpDyslexiaLPS">
+            <feature name="Dicionário"/>
+            <or abstract="true" name="Formatação">
+                <or abstract="true" name="Texto">
+                    <and name="Fonte">
+                        <feature name="ComicSans"/>
+                        <feature name="OpenDyslexic"/>
+                        <feature name="OpenSans"/>
+                        <feature name="Georgia"/>
+                    </and>
+                    <feature name="Alinhamento"/>
+                    <or abstract="true" name="Estilo">
+                        <feature name="Italico"/>
+                        <feature name="Sublinhado"/>
+                        <feature name="Negrito"/>
+                    </or>
+                    <feature name="Highlight"/>
+                    <feature name="Linhas"/>
+                    <feature name="Caracteres"/>
+                    <feature name="Parágrafos"/>
+                </or>
+                <or abstract="true" name="Tela">
+                    <feature name="Background"/>
+                    <or abstract="true" name="Overlay">
+                        <feature name="Opacidade"/>
+                        <feature name="Foreground"/>
+                    </or>
+                    <feature name="Regua"/>
+                </or>
+                <or abstract="true" name="Tamanho">
+                    <feature name="Pequeno"/>
+                    <feature name="Medio"/>
+                    <feature name="Grande"/>
+                    <feature name="Enorme"/>
+                </or>
+                <or abstract="true" name="Espaço">
+                    <feature name="Simples"/>
+                    <feature name="1.15"/>
+                    <feature name="1.5"/>
+                    <feature name="Duplo"/>
+                </or>
+                <feature name="Cor"/>
+            </or>
+            <feature name="Leitor"/>
+        </or>
     </struct>
-    <constraints/>
+    <constraints>
+        <rule>
+            <imp>
+                <var>Cor</var>
+                <disj>
+                    <var>Highlight</var>
+                    <disj>
+                        <var>Background</var>
+                        <disj>
+                            <var>Foreground</var>
+                            <var>Fonte</var>
+                        </disj>
+                    </disj>
+                </disj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Tamanho</var>
+                <disj>
+                    <var>Regua</var>
+                    <disj>
+                        <var>Caracteres</var>
+                        <var>Fonte</var>
+                    </disj>
+                </disj>
+            </imp>
+        </rule>
+        <rule>
+            <eq>
+                <var>Espaço</var>
+                <disj>
+                    <var>Linhas</var>
+                    <var>Parágrafos</var>
+                </disj>
+            </eq>
+        </rule>
+        <rule>
+            <imp>
+                <disj>
+                    <var>Highlight</var>
+                    <disj>
+                        <var>Background</var>
+                        <var>Foreground</var>
+                    </disj>
+                </disj>
+                <var>Cor</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <disj>
+                    <var>Regua</var>
+                    <var>Caracteres</var>
+                </disj>
+                <var>Tamanho</var>
+            </imp>
+        </rule>
+    </constraints>
     <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
     <comments/>
-    <featureOrder userDefined="false"/>
+    <featureOrder userDefined="true">
+        <feature name="Negrito"/>
+        <feature name="Highlight"/>
+        <feature name="Parágrafos"/>
+        <feature name="Texto"/>
+        <feature name="Formatação"/>
+        <feature name="Estilo"/>
+        <feature name="Caracteres"/>
+        <feature name="Regua"/>
+        <feature name="Alinhamento"/>
+        <feature name="Leitor"/>
+        <feature name="Overlay"/>
+        <feature name="Opacidade"/>
+        <feature name="Tela"/>
+        <feature name="Linhas"/>
+        <feature name="Sublinhado"/>
+        <feature name="Background"/>
+        <feature name="Italico"/>
+        <feature name="Dicionário"/>
+        <feature name="Foreground"/>
+        <feature name="Fonte"/>
+        <feature name="Georgia"/>
+        <feature name="ComicSans"/>
+        <feature name="OpenSans"/>
+        <feature name="OpenDyslexic"/>
+        <feature name="Tamanho"/>
+        <feature name="Pequeno"/>
+        <feature name="Medio"/>
+        <feature name="Grande"/>
+        <feature name="Enorme"/>
+        <feature name="Espaço"/>
+        <feature name="Simples"/>
+        <feature name="1.15"/>
+        <feature name="1.5"/>
+        <feature name="Duplo"/>
+        <feature name="Cor"/>
+        <feature name="WebHelpDyslexiaLPS"/>
+    </featureOrder>
 </featureModel>

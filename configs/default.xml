@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<configuration>
-    <feature automatic="selected" name="TesteMenor"/>
-    <feature manual="selected" name="Alinhamento"/>
-    <feature manual="selected" name="Bold"/>
-</configuration>

@@ -1,3 +1,5 @@
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -13,8 +15,10 @@ public class Main extends Application {
   @Override
   public void start(final Stage stage) {
 
-    // Set application icon
-   // stage.getIcons().add(new Image("webhelp.png"));
+	  // Set application icon
+	  File file = new File("icons/webhelp.png");
+	  Image image = new Image(file.toURI().toString());
+	  stage.getIcons().add(image);
 
     // Set application home page
     String homePageUrl = "https://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-F68F082";

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="WebHelpDyslexiaLPS"/>
+    <feature automatic="selected" name="Formatação"/>
+    <feature automatic="selected" name="Texto"/>
+    <feature manual="selected" name="Caracteres"/>
+    <feature automatic="selected" name="Tamanho"/>
+    <feature manual="selected" name="Pequeno"/>
+    <feature manual="selected" name="Medio"/>
+</configuration>

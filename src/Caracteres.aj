@@ -1,10 +1,7 @@
-
 import javafx.scene.web.WebView;
 
-public aspect Alinhamento{
+public aspect Caracteres {
 
-	declare precedence: Alinhamento, Sublinhado;
-		
 	after(): initialization(WebHelpBar.new(WebView)) {
 	}
 }
