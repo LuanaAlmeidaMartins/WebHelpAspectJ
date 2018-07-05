@@ -1,9 +1,11 @@
+
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class CharSpacingStatus {
+public class StatusRestricao {
 
   private boolean status = false;
   private final String removeOption = "letter-spacing";

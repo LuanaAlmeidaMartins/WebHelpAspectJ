@@ -21,7 +21,7 @@
                     <feature name="Highlight"/>
                     <feature name="Linhas"/>
                     <feature name="Caracteres"/>
-                    <feature name="Parágrafos"/>
+                    <feature name="Paragrafos"/>
                 </or>
                 <or abstract="true" name="Tela">
                     <feature name="Background"/>
@@ -39,8 +39,8 @@
                 </or>
                 <or abstract="true" name="Espaço">
                     <feature name="Simples"/>
-                    <feature name="1.15"/>
-                    <feature name="1.5"/>
+                    <feature name="UmQuinze"/>
+                    <feature name="UmMeio"/>
                     <feature name="Duplo"/>
                 </or>
                 <feature name="Cor"/>
@@ -81,7 +81,7 @@
                 <var>Espaço</var>
                 <disj>
                     <var>Linhas</var>
-                    <var>Parágrafos</var>
+                    <var>Paragrafos</var>
                 </disj>
             </eq>
         </rule>
@@ -112,7 +112,7 @@
     <featureOrder userDefined="true">
         <feature name="Negrito"/>
         <feature name="Highlight"/>
-        <feature name="Parágrafos"/>
+        <feature name="Paragrafos"/>
         <feature name="Texto"/>
         <feature name="Formatação"/>
         <feature name="Estilo"/>
@@ -141,8 +141,8 @@
         <feature name="Enorme"/>
         <feature name="Espaço"/>
         <feature name="Simples"/>
-        <feature name="1.15"/>
-        <feature name="1.5"/>
+        <feature name="UmQuinze"/>
+        <feature name="UmMeio"/>
         <feature name="Duplo"/>
         <feature name="Cor"/>
         <feature name="WebHelpDyslexiaLPS"/>

@@ -1,11 +1,10 @@
 
 
+
 import java.util.ArrayList;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-
-//import persistence.Tags;
 
 public class ApplyButtonStatus {
   private ArrayList<String> arrayOfGeneralStyle = new ArrayList<String>();

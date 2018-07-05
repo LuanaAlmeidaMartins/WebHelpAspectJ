@@ -1,3 +1,6 @@
+
+
+
 import java.io.File;
 
 import org.w3c.dom.Document;
@@ -34,7 +37,7 @@ public class WebHelpBar extends HBox {
 	}
 
 	public void action() {
-		Status status = new Status();
+		StatusSemRestricao statusSemRestricao = new StatusSemRestricao();
 		webEngine.getLoadWorker().stateProperty().addListener((obs, oldValue, newValue) -> {
 			if (newValue == State.SUCCEEDED) {
 				Document doc = webEngine.getDocument();
@@ -43,8 +46,8 @@ public class WebHelpBar extends HBox {
 				botao.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
-						status.setAlign();
-						WebHelpBar.applyButtonStatus.setFontStyle(status.getAlign(botao.getId()), status.isAlign());
+						statusSemRestricao.setStatus();
+						WebHelpBar.applyButtonStatus.setFontStyle(statusSemRestricao.getStyle(botao.getId()), statusSemRestricao.getStatus());
 					}
 				});
 			}

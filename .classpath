@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="Negrito.aj|Highlight.aj|Enorme.aj|OpenDyslexic.aj|Parágrafos.aj|Alinhamento.aj|Leitor.aj|1.15.aj|Duplo.aj|Fonte.aj|OpenSans.aj|Opacidade.aj|Linhas.aj|Sublinhado.aj|Background.aj|Grande.aj|Simples.aj|Cor.aj|Regua.aj|ComicSans.aj|Dicionário.aj|1.5.aj|Foreground.aj|Georgia.aj|Italico.aj" kind="src" path="src"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>

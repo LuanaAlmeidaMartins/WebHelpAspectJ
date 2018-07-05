@@ -1,9 +1,8 @@
 import javafx.scene.web.WebView;
 
-public aspect Medio {
+public aspect Duplo{
+	declare precedence: Duplo, UmMeio, UmQuinze, Simples;
 	
-	declare precedence: Medio, Pequeno;
-
 	after(): initialization(WebHelpBar.new(WebView)) {
 	}
 }

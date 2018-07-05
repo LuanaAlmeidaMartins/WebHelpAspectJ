@@ -1,23 +1,22 @@
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Properties;
 
-public class Status {
+public class StatusSemRestricao {
   private boolean align = false;
   Properties property = new Properties();
   
-  public void setAlign() {
+  public void setStatus() {
     this.align = !align;
   }
   
-  public boolean isAlign() {
+  public boolean getStatus() {
     return align;
   }
   
-  public String getAlign(String id) {	  
+  public String getStyle(String id) {	  
 	  try {
 	      property.load(new FileInputStream(/*
 	                                         * System.getProperty("user.dir") + "/style.txt"

@@ -1,3 +1,4 @@
+
 import java.io.File;
 
 import javafx.application.Application;
@@ -22,9 +23,9 @@ public class Main extends Application {
 
     // Set application home page
     String homePageUrl = "https://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-F68F082";
-    // String homePageUrl = "https://pt.wikipedia.org/wiki/Flor";
+     //String homePageUrl = "https://pt.wikipedia.org/wiki/Texto";
 
-    // Create a WebView
+    // Create opcaoTamanho WebView
     final WebView browser = new WebView();
 
     // Get WebEngine via WebView and load home page
@@ -38,7 +39,7 @@ public class Main extends Application {
     // Create the navigation bar
     //NavigationBar navigationBar = new NavigationBar(browser, homePageUrl);
 
-    // Create the WebHelp bar
+    // Create the WebHelpDyslexia bar
     WebHelpBar webHelpBar = new WebHelpBar(browser);
    
 
