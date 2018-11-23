@@ -1,3 +1,4 @@
+package br.ufla.webhelpaspectj;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,13 +19,10 @@ public class OpcoesDeCor {
 	public OpcoesDeCor(String a) {
 		colorPicker = new ColorPicker();
 		colorPicker.setId(a);
-
-		colorPicker.setPrefHeight(36);
+		colorPicker.setPrefHeight(38);
 		colorPicker.setPrefWidth(68);
 		colorPicker.getStyleClass().addAll("color-picker", "split-button");
-		colorPicker.setStyle(getStyle(colorPicker.getId()));
 		WebHelpBar.hbox.getChildren().add(colorPicker);
-
 	}
 
 	public void action() {

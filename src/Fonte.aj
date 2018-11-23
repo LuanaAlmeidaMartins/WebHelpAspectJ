@@ -1,12 +1,14 @@
 import javafx.scene.web.WebView;
+import br.ufla.webhelpaspectj.WebHelpBar;
+import br.ufla.webhelpaspectj.OpcoesDoBotao;
+import br.ufla.webhelpaspectj.OpcoesDeCor;
 
 public aspect Fonte {
 
 	OpcoesDoBotao opcaoTamanho = new OpcoesDoBotao("Fonte");
 	
 	int i = 0;
-	after(): initialization(WebHelpBar.new(WebView)) {
-	}
+	after(): initialization(WebHelpBar.new(WebView)) {}
 
 	pointcut Familia(): within(Georgia) ||
 						within(OpenDyslexic) ||

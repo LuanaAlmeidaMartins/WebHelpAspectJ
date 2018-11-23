@@ -1,5 +1,4 @@
-
-
+package br.ufla.webhelpaspectj;
 
 import java.io.File;
 
@@ -47,7 +46,8 @@ public class WebHelpBar extends HBox {
 					@Override
 					public void handle(MouseEvent event) {
 						statusSemRestricao.setStatus();
-						WebHelpBar.applyButtonStatus.setFontStyle(statusSemRestricao.getStyle(botao.getId()), statusSemRestricao.getStatus());
+						WebHelpBar.applyButtonStatus.setFontStyle(statusSemRestricao.getStyle(botao.getId()),
+								statusSemRestricao.getStatus());
 					}
 				});
 			}

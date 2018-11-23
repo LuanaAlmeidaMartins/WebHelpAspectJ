@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
     <feature automatic="selected" name="WebHelpDyslexiaLPS"/>
+    <feature manual="selected" name="Dicionário"/>
     <feature automatic="selected" name="Formatação"/>
-    <feature automatic="selected" name="Texto"/>
-    <feature automatic="selected" name="Fonte"/>
+    <feature automatic="selected" manual="selected" name="Texto"/>
+    <feature automatic="selected" manual="selected" name="Fonte"/>
     <feature manual="selected" name="ComicSans"/>
     <feature manual="selected" name="OpenDyslexic"/>
     <feature manual="selected" name="OpenSans"/>
+    <feature manual="selected" name="Georgia"/>
     <feature manual="selected" name="Alinhamento"/>
-    <feature automatic="selected" name="Estilo"/>
+    <feature automatic="selected" manual="selected" name="Estilo"/>
     <feature manual="selected" name="Italico"/>
     <feature manual="selected" name="Sublinhado"/>
     <feature manual="selected" name="Negrito"/>
+    <feature manual="selected" name="Highlight"/>
     <feature manual="selected" name="Linhas"/>
     <feature manual="selected" name="Caracteres"/>
     <feature manual="selected" name="Paragrafos"/>
+    <feature automatic="selected" manual="selected" name="Tela"/>
+    <feature manual="selected" name="Background"/>
+    <feature automatic="selected" manual="selected" name="Overlay"/>
+    <feature manual="selected" name="Opacidade"/>
+    <feature manual="selected" name="Foreground"/>
+    <feature manual="selected" name="Regua"/>
     <feature automatic="selected" manual="selected" name="Tamanho"/>
     <feature manual="selected" name="Pequeno"/>
     <feature manual="selected" name="Medio"/>
@@ -25,5 +34,6 @@
     <feature manual="selected" name="UmQuinze"/>
     <feature manual="selected" name="UmMeio"/>
     <feature manual="selected" name="Duplo"/>
-    <feature manual="selected" name="Cor"/>
+    <feature automatic="selected" manual="selected" name="Cor"/>
+    <feature manual="selected" name="Leitor"/>
 </configuration>
