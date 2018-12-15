@@ -5,10 +5,19 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class StatusSemRestricao {
+public class SimpleButtonStatus {
 	private boolean align = false;
+	private String id;
 	Properties property = new Properties();
+	
+	public SimpleButtonStatus(String id) {
+		this.id = id;
+	}
 
+	public String SimpleButtonID() {
+		return id;
+	}
+	
 	public void setStatus() {
 		this.align = !align;
 	}

@@ -3,10 +3,20 @@
     <feature automatic="selected" name="WebHelpDyslexiaLPS"/>
     <feature automatic="selected" name="Formatação"/>
     <feature automatic="selected" name="Texto"/>
-    <feature manual="selected" name="Fonte"/>
+    <feature automatic="selected" manual="selected" name="Fonte"/>
+    <feature manual="selected" name="ComicSans"/>
+    <feature manual="selected" name="OpenDyslexic"/>
+    <feature manual="selected" name="OpenSans"/>
+    <feature manual="selected" name="Georgia"/>
+    <feature manual="selected" name="Alinhamento"/>
+    <feature automatic="selected" name="Estilo"/>
+    <feature manual="selected" name="Italico"/>
+    <feature manual="selected" name="Sublinhado"/>
+    <feature manual="selected" name="Negrito"/>
     <feature manual="selected" name="Highlight"/>
     <feature manual="selected" name="Linhas"/>
     <feature manual="selected" name="Caracteres"/>
+    <feature manual="selected" name="Paragrafos"/>
     <feature automatic="selected" name="Tela"/>
     <feature manual="selected" name="Background"/>
     <feature manual="selected" name="Overlay"/>
@@ -16,5 +26,6 @@
     <feature manual="selected" name="Medio"/>
     <feature manual="selected" name="Grande"/>
     <feature manual="selected" name="Enorme"/>
-    <feature automatic="selected" name="Cor"/>
+    <feature automatic="selected" manual="selected" name="Cor"/>
+    <feature manual="selected" name="Leitor"/>
 </configuration>

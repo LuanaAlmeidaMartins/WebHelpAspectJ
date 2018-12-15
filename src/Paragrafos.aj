@@ -1,17 +1,18 @@
 import javafx.scene.web.WebView;
+import br.ufla.webhelpaspectj.OpcoesDeTamanho;
 import br.ufla.webhelpaspectj.WebHelpBar;
-import br.ufla.webhelpaspectj.OpcoesDoBotao;
 import javafx.scene.canvas.Canvas;
 
 public aspect Paragrafos {
-	OpcoesDoBotao opcaoTamanho = new OpcoesDoBotao("Paragrafos");
+	final String featureName = "Paragrafos";
+	OpcoesDeTamanho opcaoTamanho = new OpcoesDeTamanho(featureName);
 
 	after(): initialization(WebHelpBar.new(WebView, Canvas)) {}
 
-	pointcut Espaco(): within(Simples) ||
-		within(UmMeio) ||
-		within(UmQuinze) ||
-		within(Duplo);
+	pointcut Espaco(): within(Pequeno) ||
+		within(Medio) ||
+		within(Grande) ||
+		within(Enorme);
 
 	pointcut ConstrutorDeEspaco(): Espaco() && execution(new(..));
 
@@ -19,5 +20,11 @@ public aspect Paragrafos {
 		String[] sep = thisJoinPointStaticPart.getSourceLocation().toString().split("\\.");
 		opcaoTamanho.opcao(sep[0]);
 		opcaoTamanho.actionButton();
+	}
+	
+	after(OpcoesDeTamanho handle): target(handle) && call(private void teste(..)) {
+		if (handle.getBotaoID().equals(featureName)) {
+			WebHelpBar.applyButtonStatus.setFontStyle(handle.getID(), handle.getActived());
+		}
 	}
 }

@@ -47,32 +47,32 @@ public class ApplyButtonStatus {
 			}
 		}
 
-		// somente cabe�alho
-		// for (int j = 0; j < sizeFont.size(); j++) {
-		// for (int i = 0; i < doc.getElementsByTagName(sizeFont
-		// .get(j).getTagName()).getLength(); i++) {
-		// if (fonteStatus) {
-		// styleHeader = getFontStyle() + " font-size: "
-		// + sizeFont.get(j).getSize();
-		// System.out.println("if "+ getFontStyle() + " font-size: "
-		// + sizeFont.get(j).getSize());
-		// body.setAttribute("style", backgroundColor);
-		// } else {
-		// styleHeader = getFontStyle();
-		// System.out.println("else" + getFontStyle());
-		// }
-		// element = (Element) doc.getElementsByTagName(
-		// sizeFont.get(j).getTagName()).item(i);
-		// for (int k = 0; k < element.getChildNodes().getLength(); k++) {
-		// element.setAttribute("style", styleHeader);
-		// if (!element.getChildNodes().item(k).getNodeName().contains("#")) {
-		// Element subElement;
-		// subElement = (Element) element.getChildNodes().item(k);
-		// subElement.setAttribute("style", styleHeader);
-		// }
-		// }
-		// }
-		// }
+//		 somente cabe�alho
+//		 for (int j = 0; j < sizeFont.size(); j++) {
+//		 for (int i = 0; i < doc.getElementsByTagName(sizeFont
+//		 .get(j).getTagName()).getLength(); i++) {
+//		 if (fonteStatus) {
+//		 styleHeader = getFontStyle() + " font-size: "
+//		 + sizeFont.get(j).getSize();
+//		 System.out.println("if "+ getFontStyle() + " font-size: "
+//		 + sizeFont.get(j).getSize());
+//		 body.setAttribute("style", backgroundColor);
+//		 } else {
+//		 styleHeader = getFontStyle();
+//		 System.out.println("else" + getFontStyle());
+//		 }
+//		 element = (Element) doc.getElementsByTagName(
+//		 sizeFont.get(j).getTagName()).item(i);
+//		 for (int k = 0; k < element.getChildNodes().getLength(); k++) {
+//		 element.setAttribute("style", styleHeader);
+//		 if (!element.getChildNodes().item(k).getNodeName().contains("#")) {
+//		 Element subElement;
+//		 subElement = (Element) element.getChildNodes().item(k);
+//		 subElement.setAttribute("style", styleHeader);
+//		 }
+//		 }
+//		 }
+//		 }
 	}
 
 	public void setFontStyle(String applyStyle, Boolean status) {
@@ -80,6 +80,7 @@ public class ApplyButtonStatus {
 			this.arrayOfGeneralStyle.add(applyStyle);
 			System.out.println("if " + this.arrayOfGeneralStyle + " " + status);
 		} else {
+			
 			removeFontStyle(applyStyle);
 		}
 		applyStyle();
@@ -108,6 +109,6 @@ public class ApplyButtonStatus {
 		} else {
 			this.backgroundColor = "";
 		}
-		// applyStyle();
+		applyStyle();
 	}
 }

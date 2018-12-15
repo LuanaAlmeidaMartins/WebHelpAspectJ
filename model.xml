@@ -34,12 +34,6 @@
                     <feature name="Grande"/>
                     <feature name="Enorme"/>
                 </or>
-                <or abstract="true" name="Espaço">
-                    <feature name="Simples"/>
-                    <feature name="UmQuinze"/>
-                    <feature name="UmMeio"/>
-                    <feature name="Duplo"/>
-                </or>
                 <feature name="Cor"/>
             </or>
             <feature name="Leitor"/>
@@ -70,17 +64,14 @@
                         <var>Caracteres</var>
                         <disj>
                             <var>Fonte</var>
-                            <var>Linhas</var>
+                            <disj>
+                                <var>Linhas</var>
+                                <var>Paragrafos</var>
+                            </disj>
                         </disj>
                     </disj>
                 </disj>
             </imp>
-        </rule>
-        <rule>
-            <eq>
-                <var>Espaço</var>
-                <var>Paragrafos</var>
-            </eq>
         </rule>
         <rule>
             <imp>
@@ -134,11 +125,6 @@
         <feature name="Medio"/>
         <feature name="Grande"/>
         <feature name="Enorme"/>
-        <feature name="Espaço"/>
-        <feature name="Simples"/>
-        <feature name="UmQuinze"/>
-        <feature name="UmMeio"/>
-        <feature name="Duplo"/>
         <feature name="Cor"/>
         <feature name="WebHelpDyslexiaLPS"/>
     </featureOrder>

@@ -19,7 +19,6 @@ public aspect Background {
 	}
 	
 	after(ColorButton handle): target(handle) && call(private void setColor(..)) {
-		
 		if(handle.getColorButtonStatus().getButtonID().equals(featureName)) {
 			String colorName = button.converterColor(handle.getColorButtonStatus().getColor());
 			WebHelpBar.applyButtonStatus.setFontStyle("background-color: #"+ colorName + ";", handle.getColorButtonStatus().isActive());

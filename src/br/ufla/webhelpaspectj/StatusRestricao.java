@@ -37,6 +37,7 @@ public class StatusRestricao {
 		} catch (IOException e) {
 			System.out.println("IO");
 		}
+		System.out.println(property.getProperty(type));
 		return property.getProperty(type);
 	}
 

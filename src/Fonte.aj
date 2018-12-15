@@ -25,7 +25,6 @@ public aspect Fonte {
 	after(): ConstrutorDeFamilia(){
 	//	OpcoesDoBotao opcaoTamanho = new OpcoesDoBotao("Fonte");
 		String[] sep = thisJoinPointStaticPart.getSourceLocation().toString().split("\\.");
-		System.out.println("Familia "+sep[0]);
 		opcaoFamilia.opcao(sep[0]);
 		opcaoFamilia.actionButton();
 	}
@@ -66,4 +65,18 @@ public aspect Fonte {
 			WebHelpBar.applyButtonStatus.applyStyle();
 		}
 	}
+	
+	after(OpcoesDeTamanho handle): target(handle) && call(private void teste(..)) {
+		
+		if(handle.getBotaoID().equals(featureName)) {
+			WebHelpBar.applyButtonStatus.setFontStyle(handle.getID(), handle.getActived());
+			WebHelpBar.applyButtonStatus.applyStyle();
+		}
+		if(handle.getBotaoID().equals("Tamanho")) {
+			WebHelpBar.applyButtonStatus.setFontStyle("font-size: "+handle.getID(), handle.getActived());
+			WebHelpBar.applyButtonStatus.applyStyle();
+		}
+	}
+	
+	
 }

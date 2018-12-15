@@ -29,7 +29,6 @@ public class ColorButton {
 	}
 
 	public void actionButton() {
-		System.out.println("action");
 
 		WebHelpBar.webEngine.getLoadWorker().stateProperty().addListener((obs, oldValue, newValue) -> {
 			status = new ColorButtonStatus();
