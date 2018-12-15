@@ -1,13 +1,15 @@
 import javafx.scene.web.WebView;
-import br.ufla.webhelpaspectj.OpcoesDoBotao;
+import br.ufla.webhelpaspectj.OpcoesDeTamanho;
 import br.ufla.webhelpaspectj.WebHelpBar;
+import javafx.scene.canvas.Canvas;
 
 public aspect Caracteres {
-	OpcoesDoBotao opcaoTamanho = new OpcoesDoBotao("Caracteres");
+	final String featureName = "Caracteres";
+	OpcoesDeTamanho opcaoTamanho = new OpcoesDeTamanho(featureName);
 
 	declare precedence: Caracteres, Alinhamento, Sublinhado, Italico, Negrito;
 
-	after(): initialization(WebHelpBar.new(WebView)) {
+	after(): initialization(WebHelpBar.new(WebView, Canvas)) {
 	}
 
 	pointcut Tamanho(): within(Pequeno) ||
@@ -23,4 +25,9 @@ public aspect Caracteres {
 		opcaoTamanho.actionButton();
 	}
 
+	after(OpcoesDeTamanho handle): target(handle) && call(private void teste(..)) {
+		if (handle.getBotaoID().equals(featureName)) {
+			WebHelpBar.applyButtonStatus.setFontStyle(handle.getID(), handle.getActived());
+		}
+	}
 }

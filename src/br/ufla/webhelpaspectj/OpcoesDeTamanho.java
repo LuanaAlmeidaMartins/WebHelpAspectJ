@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import org.w3c.dom.Document;
 
 import javafx.concurrent.Worker.State;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.ToggleGroup;
@@ -16,12 +14,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class OpcoesDoBotao {
-	ArrayList<RadioMenuItem> item = new ArrayList<>();
-	SplitMenuButton botao;
-	StatusRestricao statusRestricao = new StatusRestricao();
+public class OpcoesDeTamanho {
+	private ArrayList<RadioMenuItem> item = new ArrayList<>();
+	private SplitMenuButton botao;
+	private StatusRestricao statusRestricao = new StatusRestricao();
+	private String style;
+	private boolean actived;
 
-	public OpcoesDoBotao(String a) {
+	public OpcoesDeTamanho(String a) {
 		botao = new SplitMenuButton();
 		botao.setId(a);
 
@@ -52,22 +52,37 @@ public class OpcoesDoBotao {
 					@Override
 					public void handle(MouseEvent event) {
 						statusRestricao.setCharSpacing();
-						WebHelpBar.applyButtonStatus.setFontStyle(statusRestricao.getCharSpacing(botao.getId()),
+						teste(statusRestricao.getCharSpacing(botao.getId()),
 								statusRestricao.isCharSpacing());
 					}
+
 				});
 
 				for (int i = 0; i < item.size(); i++) {
 					int j = i;
 					item.get(i).setOnAction(actionEvent -> {
 						statusRestricao.setOptionCharSpacing();
-						WebHelpBar.applyButtonStatus.removeFontStyle(statusRestricao.getRemoveOption());
-						WebHelpBar.applyButtonStatus.setFontStyle(statusRestricao.getCharSpacing(item.get(j).getId()),
+						teste(statusRestricao.getCharSpacing(item.get(j).getId()),
 								statusRestricao.isCharSpacing());
 					});
 				}
 			}
 		});
 	}
-
+	
+	public String getID() {
+		return style;
+	}
+	public boolean getActived() {
+		return actived;
+	}
+	
+	private void teste(String style, boolean actived) {
+		this.style = style;
+		this.actived = actived;
+	}
+	
+	public String getBotaoID(){
+		return botao.getId();
+	}
 }

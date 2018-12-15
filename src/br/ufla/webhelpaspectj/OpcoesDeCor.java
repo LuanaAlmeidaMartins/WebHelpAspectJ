@@ -51,7 +51,7 @@ public class OpcoesDeCor {
 
 				colorPicker.setOnAction((ActionEvent t) -> {
 					letterColorStatus.setOptionColorSpacing();
-					WebHelpBar.applyButtonStatus.removeFontStyle(letterColorStatus.getRemoveOption());
+			//		WebHelpBar.applyButtonStatus.removeFontStyle(letterColorStatus.getRemoveOption());
 					letterColorStatus.setColorName(color.converterColor(colorPicker.getValue()));
 					WebHelpBar.applyButtonStatus.setFontStyle(letterColorStatus.getColor(),
 							letterColorStatus.isColor());

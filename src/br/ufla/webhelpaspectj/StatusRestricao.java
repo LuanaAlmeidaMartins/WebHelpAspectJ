@@ -8,7 +8,7 @@ import java.util.Properties;
 public class StatusRestricao {
 
 	private boolean status = false;
-	private final String removeOption = "letter-spacing";
+	private final String removeOption = "";
 	Properties property = new Properties();
 
 	public boolean isCharSpacing() {
@@ -27,6 +27,7 @@ public class StatusRestricao {
 	}
 
 	public String getCharSpacing(String type) {
+		System.out.println("estilo "+type);
 		try {
 			property.load(new FileInputStream(/*
 												 * System.getProperty("user.dir") + "/style.txt"

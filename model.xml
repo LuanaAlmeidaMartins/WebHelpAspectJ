@@ -25,10 +25,7 @@
                 </or>
                 <or abstract="true" name="Tela">
                     <feature name="Background"/>
-                    <or abstract="true" name="Overlay">
-                        <feature name="Opacidade"/>
-                        <feature name="Foreground"/>
-                    </or>
+                    <feature name="Overlay"/>
                     <feature name="Regua"/>
                 </or>
                 <or abstract="true" name="Tamanho">
@@ -57,7 +54,7 @@
                     <disj>
                         <var>Background</var>
                         <disj>
-                            <var>Foreground</var>
+                            <var>Overlay</var>
                             <var>Fonte</var>
                         </disj>
                     </disj>
@@ -71,7 +68,10 @@
                     <var>Regua</var>
                     <disj>
                         <var>Caracteres</var>
-                        <var>Fonte</var>
+                        <disj>
+                            <var>Fonte</var>
+                            <var>Linhas</var>
+                        </disj>
                     </disj>
                 </disj>
             </imp>
@@ -79,10 +79,7 @@
         <rule>
             <eq>
                 <var>Espaço</var>
-                <disj>
-                    <var>Linhas</var>
-                    <var>Paragrafos</var>
-                </disj>
+                <var>Paragrafos</var>
             </eq>
         </rule>
         <rule>
@@ -91,7 +88,7 @@
                     <var>Highlight</var>
                     <disj>
                         <var>Background</var>
-                        <var>Foreground</var>
+                        <var>Overlay</var>
                     </disj>
                 </disj>
                 <var>Cor</var>
@@ -121,14 +118,12 @@
         <feature name="Alinhamento"/>
         <feature name="Leitor"/>
         <feature name="Overlay"/>
-        <feature name="Opacidade"/>
         <feature name="Tela"/>
         <feature name="Linhas"/>
         <feature name="Sublinhado"/>
         <feature name="Background"/>
         <feature name="Italico"/>
         <feature name="Dicionário"/>
-        <feature name="Foreground"/>
         <feature name="Fonte"/>
         <feature name="Georgia"/>
         <feature name="ComicSans"/>

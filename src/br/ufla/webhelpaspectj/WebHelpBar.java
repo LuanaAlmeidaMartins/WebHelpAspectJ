@@ -6,6 +6,7 @@ import org.w3c.dom.Document;
 
 import javafx.concurrent.Worker.State;
 import javafx.event.EventHandler;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,12 +17,14 @@ import javafx.scene.web.WebView;
 
 public class WebHelpBar extends HBox {
 	static HBox hbox;
-	static WebEngine webEngine;
-	static ApplyButtonStatus applyButtonStatus;
+	public static WebEngine webEngine;
+	public static ApplyButtonStatus applyButtonStatus;
 	Button botao;
+	public static Canvas overlay;
 
-	public WebHelpBar(WebView web) {
+	public WebHelpBar(WebView web, Canvas overlay) {
 		WebHelpBar.webEngine = web.getEngine();
+		WebHelpBar.overlay = overlay;
 		hbox = new HBox();
 		this.getChildren().add(hbox);
 	}

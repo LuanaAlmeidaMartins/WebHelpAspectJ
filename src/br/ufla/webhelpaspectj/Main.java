@@ -3,10 +3,13 @@ package br.ufla.webhelpaspectj;
 import java.io.File;
 
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -42,13 +45,18 @@ public class Main extends Application {
 		// NavigationBar navigationBar = new NavigationBar(browser, homePageUrl);
 
 		// Create the WebHelpDyslexia bar
-		WebHelpBar webHelpBar = new WebHelpBar(browser);
+		Canvas overlay = new Canvas(1300,600);
+	    WebHelpBar webHelpBar = new WebHelpBar(browser, overlay);
+	    overlay.setAccessibleText("aa");
+	    StackPane stack = new StackPane();
+	    stack.getChildren().addAll(browser, overlay);
+	    stack.setMargin(browser, new Insets(12, 12, 10, 28));
 
 		// Create the VBox, add the navigation, menu and webview to the VBox and
-		VBox root = new VBox(webHelpBar, browser);
+		VBox root = new VBox(webHelpBar, stack);
 		// navigationBar,
 		// Create the Scene, add the Scene to the Stage and display the Stage
-		Scene scene = new Scene(root);
+		Scene scene = new Scene(root, 1600,900);
 
 		// root.getChildren().add(g);
 		stage.setScene(scene);
