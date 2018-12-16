@@ -1,5 +1,5 @@
-import br.ufla.webhelpaspectj.ColorButton;
-import br.ufla.webhelpaspectj.WebHelpBar;
+import br.ufla.webhelp.action.ColorButton;
+import br.ufla.webhelp.principal.WebHelpBar;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.web.WebView;
 

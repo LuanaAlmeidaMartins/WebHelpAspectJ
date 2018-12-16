@@ -1,5 +1,6 @@
-package br.ufla.webhelpaspectj;
+package br.ufla.webhelp.principal;
 
+import br.ufla.webhelp.action.ApplyButtonStatus;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.HBox;
 import javafx.scene.web.WebEngine;

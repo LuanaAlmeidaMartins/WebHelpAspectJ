@@ -1,9 +1,9 @@
-import br.ufla.webhelpaspectj.SizeButton;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.web.WebView;
-import br.ufla.webhelpaspectj.WebHelpBar;
+import br.ufla.webhelp.action.SizeButton;
+import br.ufla.webhelp.principal.WebHelpBar;
 
 public aspect Regua {
 

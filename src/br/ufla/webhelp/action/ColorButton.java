@@ -1,4 +1,4 @@
-package br.ufla.webhelpaspectj;
+package br.ufla.webhelp.action;
 
 import javafx.concurrent.Worker.State;
 import javafx.event.ActionEvent;
@@ -7,6 +7,9 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import org.w3c.dom.Document;
+
+import br.ufla.webhelp.principal.WebHelpBar;
+import br.ufla.webhelp.status.ColorButtonStatus;
 
 public class ColorButton {
 	private ColorPicker colorPicker;

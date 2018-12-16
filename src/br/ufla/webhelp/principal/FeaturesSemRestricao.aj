@@ -1,4 +1,7 @@
-package br.ufla.webhelpaspectj;
+package br.ufla.webhelp.principal;
+
+import br.ufla.webhelp.action.SimpleButton;
+import br.ufla.webhelp.action.Synth;
 
 public aspect FeaturesSemRestricao {
 

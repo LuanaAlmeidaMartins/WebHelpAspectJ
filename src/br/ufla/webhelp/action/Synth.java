@@ -1,9 +1,11 @@
-package br.ufla.webhelpaspectj;
+package br.ufla.webhelp.action;
 
 import java.util.Locale;
 import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
+
+import br.ufla.webhelp.principal.WebHelpBar;
 
 public class Synth {
 

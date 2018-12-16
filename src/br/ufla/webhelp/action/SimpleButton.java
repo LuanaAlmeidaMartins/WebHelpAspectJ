@@ -1,7 +1,10 @@
-package br.ufla.webhelpaspectj;
+package br.ufla.webhelp.action;
 
 import java.io.File;
 import org.w3c.dom.Document;
+
+import br.ufla.webhelp.principal.WebHelpBar;
+import br.ufla.webhelp.status.SimpleButtonStatus;
 import javafx.concurrent.Worker.State;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;

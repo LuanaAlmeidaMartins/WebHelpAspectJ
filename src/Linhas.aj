@@ -1,5 +1,5 @@
-import br.ufla.webhelpaspectj.SizeButton;
-import br.ufla.webhelpaspectj.WebHelpBar;
+import br.ufla.webhelp.action.SizeButton;
+import br.ufla.webhelp.principal.WebHelpBar;
 import javafx.scene.web.WebView;
 import javafx.scene.canvas.Canvas;
 

@@ -1,35 +1,32 @@
-package br.ufla.webhelpaspectj;
+package br.ufla.webhelp.status;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class SizeButtonStatus {
-
+public class SimpleButtonStatus {
 	private boolean status = false;
+	private String id;
 	private Properties property = new Properties();
-	private String buttonID, subButtonID;
 	
-	public SizeButtonStatus(String id) {
-		this.buttonID = id;
+	public SimpleButtonStatus(String id) {
+		this.id = id;
 	}
 
-	public void setMenu() {
+	public String SimpleButtonID() {
+		return id;
+	}
+	
+	public void setStatus() {
 		this.status = !status;
-	}
-
-	public void setSubMenu() {
-		if (this.status == false) {
-			this.status = !status;
-		}
 	}
 
 	public boolean isActive() {
 		return status;
 	}
 
-	public String getCharSpacing() {
+	public String getStyle(String id) {
 		try {
 			property.load(new FileInputStream(/*
 												 * System.getProperty("user.dir") + "/style.txt"
@@ -39,14 +36,6 @@ public class SizeButtonStatus {
 		} catch (IOException e) {
 			System.out.println("IO");
 		}
-		return property.getProperty(subButtonID);
-	}
-
-	public void setButtonID(String id) {
-		this.subButtonID= id;
-	}
-	
-	public String getButtonID() {
-		return buttonID;
+		return property.getProperty(id);
 	}
 }

@@ -1,4 +1,4 @@
-package br.ufla.webhelpaspectj;
+package br.ufla.webhelp.action;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
