@@ -14,21 +14,20 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class OpcoesDeTamanho {
+public class SizeButton {
 	private ArrayList<RadioMenuItem> item = new ArrayList<>();
 	private SplitMenuButton botao;
-	private StatusRestricao statusRestricao = new StatusRestricao();
+	private SizeButtonStatus status;
 	private String style;
 	private boolean actived;
 
-	public OpcoesDeTamanho(String a) {
+	public SizeButton(String a) {
 		botao = new SplitMenuButton();
 		botao.setId(a);
-
 		File file = new File("icons/" + a + ".png");
 		Image image = new Image(file.toURI().toString(), 28, 28, false, false);
 		botao.setGraphic(new ImageView(image));
-
+		status = new SizeButtonStatus(botao.getId());
 		WebHelpBar.hbox.getChildren().add(botao);
 	}
 
@@ -51,9 +50,11 @@ public class OpcoesDeTamanho {
 				botao.setOnMouseClicked(new EventHandler<MouseEvent>() {
 					@Override
 					public void handle(MouseEvent event) {
-						statusRestricao.setCharSpacing();
-						teste(statusRestricao.getCharSpacing(botao.getId()),
-								statusRestricao.isCharSpacing());
+						status.setMenu();
+						status.setButtonID(botao.getId());
+						teste();
+						//status.getCharSpacing(),
+						//status.isCharSpacing()
 					}
 
 				});
@@ -61,28 +62,19 @@ public class OpcoesDeTamanho {
 				for (int i = 0; i < item.size(); i++) {
 					int j = i;
 					item.get(i).setOnAction(actionEvent -> {
-						statusRestricao.setOptionCharSpacing();
-						teste(statusRestricao.getCharSpacing(item.get(j).getId()),
-								statusRestricao.isCharSpacing());
+						status.setSubMenu();
+						status.setButtonID(item.get(j).getId());
+						teste();
 					});
 				}
 			}
 		});
 	}
-	
-	public String getID() {
-		return style;
-	}
-	public boolean getActived() {
-		return actived;
+
+	private void teste() {
 	}
 	
-	private void teste(String style, boolean actived) {
-		this.style = style;
-		this.actived = actived;
-	}
-	
-	public String getBotaoID(){
-		return botao.getId();
+	public SizeButtonStatus getSizeButtonStatus() {
+		return status;
 	}
 }

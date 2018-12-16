@@ -18,7 +18,7 @@ public aspect Highlight {
 		button.actionButton();
 	}
 	
-	after(ColorButton handle): target(handle) && call(private void setColor(..)) {
+	after(ColorButton handle): target(handle) && call(private void setFeatureStyle(..)) {
 		
 		if(handle.getColorButtonStatus().getButtonID().equals(featureName)) {
 			WebHelpBar.overlay.setVisible(false);

@@ -22,7 +22,7 @@ public aspect Overlay {
 		button.actionButton();
 	}
 	
-	after(ColorButton handle): target(handle) && call(private void setColor(..)) {
+	after(ColorButton handle): target(handle) && call(private void setFeatureStyle(..)) {
 		if(handle.getColorButtonStatus().getButtonID().equals(featureName)) {
 			WebHelpBar.overlay.setVisible(true);
 			GraphicsContext gc = WebHelpBar.overlay.getGraphicsContext2D();
@@ -30,9 +30,9 @@ public aspect Overlay {
 			WebHelpBar.overlay.setOpacity(0.5);
 
 			if (handle.getColorButtonStatus().isActive() == true) {
-				gc.setFill(Color.color(handle.getColorButtonStatus().getRed(), 
-						handle.getColorButtonStatus().getGreen(), 
-						handle.getColorButtonStatus().getBlue()));
+				gc.setFill(Color.color(handle.getColorButtonStatus().getColor().getRed(), 
+						handle.getColorButtonStatus().getColor().getGreen(), 
+						handle.getColorButtonStatus().getColor().getBlue()));
 				gc.fillRect(0, -20, 1600, 700);
 			} else {
 				gc.clearRect(0, -20, 1600, 700);

@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class SimpleButtonStatus {
-	private boolean align = false;
+	private boolean status = false;
 	private String id;
-	Properties property = new Properties();
+	private Properties property = new Properties();
 	
 	public SimpleButtonStatus(String id) {
 		this.id = id;
@@ -19,11 +19,11 @@ public class SimpleButtonStatus {
 	}
 	
 	public void setStatus() {
-		this.align = !align;
+		this.status = !status;
 	}
 
-	public boolean getStatus() {
-		return align;
+	public boolean isActive() {
+		return status;
 	}
 
 	public String getStyle(String id) {

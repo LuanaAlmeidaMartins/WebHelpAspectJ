@@ -1,11 +1,5 @@
 package br.ufla.webhelpaspectj;
 
-import java.util.Locale;
-
-import javax.speech.Central;
-import javax.speech.synthesis.Synthesizer;
-import javax.speech.synthesis.SynthesizerModeDesc;
-
 public aspect FeaturesSemRestricao {
 
 	pointcut Button(): within(Negrito) ||
@@ -29,7 +23,7 @@ public aspect FeaturesSemRestricao {
 		else {
 			WebHelpBar.applyButtonStatus.setFontStyle(
 					handle.getSimpleButton().getStyle(handle.getSimpleButton().SimpleButtonID()),
-					handle.getSimpleButton().getStatus());
+					handle.getSimpleButton().isActive());
 		}
 	}
 }

@@ -1,11 +1,11 @@
 import javafx.scene.web.WebView;
-import br.ufla.webhelpaspectj.OpcoesDeTamanho;
+import br.ufla.webhelpaspectj.SizeButton;
 import br.ufla.webhelpaspectj.WebHelpBar;
 import javafx.scene.canvas.Canvas;
 
 public aspect Caracteres {
 	final String featureName = "Caracteres";
-	OpcoesDeTamanho opcaoTamanho = new OpcoesDeTamanho(featureName);
+	SizeButton opcaoTamanho = new SizeButton(featureName);
 
 	declare precedence: Caracteres, Alinhamento, Sublinhado, Italico, Negrito;
 
@@ -25,9 +25,12 @@ public aspect Caracteres {
 		opcaoTamanho.actionButton();
 	}
 
-	after(OpcoesDeTamanho handle): target(handle) && call(private void teste(..)) {
-		if (handle.getBotaoID().equals(featureName)) {
-			WebHelpBar.applyButtonStatus.setFontStyle(handle.getID(), handle.getActived());
+	after(SizeButton handle): target(handle) && call(private void teste(..)) {
+		if (handle.getSizeButtonStatus().getButtonID().equals(featureName)) {
+			String[] tagStyle = handle.getSizeButtonStatus().getCharSpacing().split(":");
+			WebHelpBar.applyButtonStatus.removeFontStyle(tagStyle[0]);
+			WebHelpBar.applyButtonStatus.setFontStyle(handle.getSizeButtonStatus().getCharSpacing(), 
+					handle.getSizeButtonStatus().isActive());
 		}
 	}
 }

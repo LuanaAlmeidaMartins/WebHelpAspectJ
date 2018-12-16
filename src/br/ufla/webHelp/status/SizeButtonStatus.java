@@ -5,29 +5,31 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-public class StatusRestricao {
+public class SizeButtonStatus {
 
 	private boolean status = false;
-	private final String removeOption = "";
-	Properties property = new Properties();
-
-	public boolean isCharSpacing() {
-		return status;
+	private Properties property = new Properties();
+	private String buttonID, subButtonID;
+	
+	public SizeButtonStatus(String id) {
+		this.buttonID = id;
 	}
 
-	public void setCharSpacing() {
+	public void setMenu() {
 		this.status = !status;
 	}
 
-	public void setOptionCharSpacing() {
+	public void setSubMenu() {
 		if (this.status == false) {
 			this.status = !status;
-			System.out.println("entrou if " + this.status);
 		}
 	}
 
-	public String getCharSpacing(String type) {
-		System.out.println("estilo "+type);
+	public boolean isActive() {
+		return status;
+	}
+
+	public String getCharSpacing() {
 		try {
 			property.load(new FileInputStream(/*
 												 * System.getProperty("user.dir") + "/style.txt"
@@ -37,11 +39,14 @@ public class StatusRestricao {
 		} catch (IOException e) {
 			System.out.println("IO");
 		}
-		System.out.println(property.getProperty(type));
-		return property.getProperty(type);
+		return property.getProperty(subButtonID);
 	}
 
-	public String getRemoveOption() {
-		return removeOption;
+	public void setButtonID(String id) {
+		this.subButtonID= id;
+	}
+	
+	public String getButtonID() {
+		return buttonID;
 	}
 }

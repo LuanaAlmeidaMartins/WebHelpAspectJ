@@ -1,9 +1,7 @@
 package br.ufla.webhelpaspectj;
 
 import java.io.File;
-
 import org.w3c.dom.Document;
-
 import javafx.concurrent.Worker.State;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -12,8 +10,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class SimpleButton {
-	Button button;
-	SimpleButtonStatus status;
+	private Button button;
+	private SimpleButtonStatus status;
 
 	public SimpleButton(String a) {
 		button = new Button();
