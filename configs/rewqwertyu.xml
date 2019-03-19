@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="WebHelpDyslexiaLPS"/>
+    <feature automatic="selected" name="Formatação"/>
+    <feature automatic="selected" name="Texto"/>
+    <feature automatic="selected" name="Fonte"/>
+    <feature manual="selected" name="ComicSans"/>
+    <feature automatic="selected" name="Tela"/>
+    <feature manual="selected" name="Background"/>
+    <feature automatic="selected" manual="selected" name="Cor"/>
+</configuration>
